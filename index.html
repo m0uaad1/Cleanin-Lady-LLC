@@ -1,229 +1,311 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en" data-theme="dark">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>HUNANIMA — Machines Agricoles Simples</title>
-  <meta name="description" content="HUNANIMA — machines agricoles simples et fiables. Récolte, fourrage et outils pour petites parcelles avec support clair et prix équitable."/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cleanin Lady, LLC — Home Cleaning Services</title>
+  <meta name="description" content="Cleanin Lady, LLC — reliable house cleaning in Victorville, CA. Standard, deep, and move‑out cleans with eco options and fast support." />
+  <meta name="keywords" content="house cleaning, maid service, deep clean, move out clean, Victorville" />
+  <meta property="og:title" content="Cleanin Lady, LLC — Cleaning House" />
+  <meta property="og:description" content="Purple & black brand • Professional home cleaning in Victorville, CA" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://le-cdn.hibuwebsites.com/2909790771894a2487ef6fd1ff0a3bd9/dms3rep/multi/opt/Home01-1920w.jpg" />
+  <link rel="icon" href="https://www.prevalspraygun.com/wp-content/uploads/2018/11/gra4-2.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --primary:#1B7F3A;   /* Vert */
-      --accent:#FFD300;    /* Jaune */
-      --nav:#0E4D25;       /* Vert foncé */
-      --ink:#0b0b0b;
-      --muted:#58636f;
-      --card:#ffffff;
-      --bg:#ffffff;
-    }
+    :root{--bg:#0b0a0f;--card:#111118;--text:#eef;--muted:#b9b6c9;--purple:#8b5cf6;--pink:#ff4d9d;--black:#0b0a0f;--accent:#b583ff;--shadow:0 20px 40px rgba(0,0,0,.45);--radius:18px}
+    [data-theme="light"]{--bg:#f7f6fb;--card:#ffffff;--text:#171320;--muted:#5f5871;--shadow:0 18px 34px rgba(30,20,60,.15)}
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6}
+    html,body{margin:0;height:100%;scroll-behavior:smooth}
+    body{font-family:Inter,system-ui; background:radial-gradient(1200px 700px at 15% 10%,rgba(139,92,246,.15),transparent 60%),radial-gradient(1000px 700px at 85% 30%,rgba(255,77,157,.12),transparent 60%),var(--bg); color:var(--text)}
     a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
-    .container{max-width:1100px;margin:0 auto;padding:24px}
+    .container{max-width:1200px;margin:0 auto;padding:0 24px}
+    /* header */
+    header{position:sticky;top:0;z-index:50;background:linear-gradient(180deg,rgba(11,10,15,.7),transparent);backdrop-filter:blur(6px)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+    .brand{display:flex;gap:12px;align-items:center;font-family:Montserrat,Inter,sans-serif;font-weight:900;letter-spacing:.4px}
+    .brand-logo{width:46px;height:46px;border-radius:12px;overflow:hidden;box-shadow:0 0 26px rgba(139,92,246,.5),var(--shadow)}
+    .brand-logo img{width:100%;height:100%;object-fit:cover}
+    nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}
+    nav a{opacity:.9;font-weight:700}
+    nav a:hover{opacity:1}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:999px;border:0;background:linear-gradient(135deg,var(--purple),var(--pink));color:#100716;font-weight:900;box-shadow:0 0 16px rgba(139,92,246,.4),0 0 22px rgba(255,77,157,.25),var(--shadow);cursor:pointer}
+    .btn.ghost{background:transparent;color:var(--text);border:1.5px solid rgba(255,255,255,.18)}
+    .menu-toggle{display:none}
+    /* hero */
+    .hero{position:relative;min-height:94vh;display:grid;place-items:center;overflow:hidden}
+    .hero-bg{position:absolute;inset:0;background:url('https://le-cdn.hibuwebsites.com/2909790771894a2487ef6fd1ff0a3bd9/dms3rep/multi/opt/Home01-1920w.jpg') center/cover no-repeat;filter:saturate(1.08) contrast(1.05);transform:scale(1.06);animation:zoom 22s ease-in-out infinite alternate;opacity:.35}
+    .overlay{position:absolute;inset:0;background:radial-gradient(800px 420px at 20% 25%,rgba(139,92,246,.25),transparent 60%),radial-gradient(800px 420px at 80% 65%,rgba(255,77,157,.22),transparent 60%)}
+    @keyframes zoom{to{transform:scale(1.14)}}
+    .hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:center}
+    .card{background:linear-gradient(180deg,rgba(17,17,24,.85),rgba(17,17,24,.6));border:1px solid rgba(139,92,246,.32);padding:28px;border-radius:var(--radius);box-shadow:inset 0 0 40px rgba(255,77,157,.12),0 0 40px rgba(139,92,246,.15),var(--shadow)}
+    [data-theme="light"] .card{background:#fff;border-color:rgba(0,0,0,.08)}
+    .eyebrow{display:inline-flex;gap:8px;align-items:center;color:var(--accent);font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+    .title{font-family:Montserrat,Inter,sans-serif;font-weight:900;font-size:clamp(34px,6.2vw,70px);line-height:1.02;margin:.35em 0}
+    .subtitle{color:var(--muted);max-width:62ch}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+    .stat{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.09);border-radius:14px;padding:14px 16px;text-align:center}
+    .stat h3{margin:0;font-size:26px}
+    .stat p{margin:6px 0 0;color:var(--muted);font-size:13px}
+    .media{position:relative;border-radius:var(--radius);overflow:hidden;min-height:460px;box-shadow:0 0 50px rgba(139,92,246,.3),0 0 40px rgba(255,77,157,.25),var(--shadow)}
+    .media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.04);transition:transform 1.2s ease}
+    .media:hover img{transform:scale(1.1)}
 
-    /* Header */
-    header{background:var(--nav); color:#fff; position:sticky; top:0; z-index:10; box-shadow:0 6px 18px rgba(0,0,0,.08)}
-    .topbar{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px 24px}
-    .brand{font-weight:900; letter-spacing:.35px}
-    nav a{display:inline-block; padding:10px 14px; border-radius:12px; color:#eaffea; font-weight:700}
-    nav a:hover{background:rgba(255,255,255,.12)}
-    .cta-btn{background:var(--accent); color:#1a1500; padding:10px 14px; border-radius:12px; font-weight:800}
+    section{padding:90px 0}
+    h2.section-title{font-family:Montserrat,Inter,sans-serif;font-size:clamp(28px,4.5vw,42px);margin:0 0 12px;text-shadow:0 0 10px rgba(139,92,246,.18)}
+    p.lead{color:var(--muted);max-width:70ch}
+    .reveal{opacity:0;transform:translateY(20px);transition:.8s ease}
+    .reveal.visible{opacity:1;transform:none}
 
-    /* Hero (animated card) */
-    .hero-wrap{background:linear-gradient(180deg,#ffffff,#f2fff6); padding:42px 24px}
-    .hero-card{
-      background:var(--card); border:1px solid rgba(0,0,0,.06); border-radius:22px;
-      box-shadow:0 30px 60px rgba(0,0,0,.12); padding:28px;
-      display:grid; grid-template-columns:1.15fr .85fr; gap:22px; overflow:hidden;
-      transform:translateY(24px); opacity:0; animation:cardIn .9s ease-out .15s forwards;
-    }
-    @keyframes cardIn{to{transform:translateY(0);opacity:1}}
-    .hero-badge{display:inline-flex; align-items:center; gap:10px; background:#0e3a1d; color:var(--accent); padding:6px 12px; border-radius:999px; font-size:.9rem; font-weight:800}
-    .hero-title{font-size:clamp(26px,4vw,42px); line-height:1.15; margin:14px 0 10px; font-weight:900}
-    .hero-title .grad{background:linear-gradient(90deg,var(--primary),#2fc368); -webkit-background-clip:text; color:transparent}
-    .hero-sub{font-size:1.02rem; color:#2f3540}
-    .hero-actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:14px}
-    .btn{border:2px solid #0e3a1d; color:#fff; background:#0e3a1d; padding:12px 18px; border-radius:14px; font-weight:800}
-    .btn:hover{transform:translateY(-1px); box-shadow:0 8px 16px rgba(0,0,0,.15)}
-    .btn.secondary{background:var(--accent); color:#1a1500; border-color:var(--accent)}
-    .hero-media{border-radius:18px; overflow:hidden; aspect-ratio:4/3; background:#f6fff8;
-      display:grid; grid-template-columns:1fr 1fr; grid-template-rows:1fr 1fr; gap:8px}
-    .hero-media img{object-fit:cover; width:100%; height:100%}
+    /* Carousel */
+    .scroller{position:relative}
+    .cards{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(260px,1fr);gap:20px;overflow:auto;padding-bottom:8px;scroll-snap-type:x mandatory}
+    .item{scroll-snap-align:start;background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:18px;overflow:hidden;box-shadow:var(--shadow)}
+    .item .thumb{height:190px;overflow:hidden;position:relative}
+    .item .thumb img{width:100%;height:100%;object-fit:cover;transform:scale(1.05);transition:transform .6s ease}
+    .item:hover .thumb img{transform:scale(1.12)}
+    .badge{position:absolute;left:12px;top:12px;background:rgba(0,0,0,.6);padding:6px 10px;border-radius:999px;font-size:12px;font-weight:800}
+    .item .body{padding:16px}
+    .meta{display:flex;gap:12px;color:var(--muted);font-size:13px;margin-top:6px}
+    .arrows{position:absolute;inset:0;display:flex;justify-content:space-between;align-items:center;pointer-events:none}
+    .arrow{pointer-events:auto;background:rgba(0,0,0,.55);border:none;color:#fff;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;cursor:pointer}
 
-    /* Sections */
-    section{padding:56px 24px}
-    section h2{font-size:clamp(22px,3vw,32px); margin:0 0 14px; font-weight:900}
-    .muted{color:var(--muted)}
+    /* Services grid */
+    .grid{display:grid;gap:20px}
+    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
+    .service{background:var(--card);border:1px solid rgba(255,255,255,.08);padding:22px;border-radius:18px;box-shadow:var(--shadow)}
+    .service h3{margin:6px 0 8px}
+    .service p{margin:0;color:var(--muted)}
 
-    /* Cards */
-    .cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px}
-    .card{border:1px solid rgba(0,0,0,.06); border-radius:16px; padding:16px; background:#fff; box-shadow:0 8px 24px rgba(0,0,0,.06);
-      transform:translateY(14px); opacity:0}
-    .card.reveal{animation:reveal .7s ease-out forwards}
-    @keyframes reveal{to{transform:translateY(0); opacity:1}}
-
-    /* Gallery */
-    .gallery{display:grid; grid-template-columns:repeat(2,1fr); gap:12px}
-    .gallery img{border-radius:14px; aspect-ratio:4/3; object-fit:cover}
-
-    /* Formula */
-    .formula{border-left:6px solid var(--accent); background:#fff9ce; padding:16px 18px; border-radius:12px}
-    .formula ol{margin:0; padding-left:18px}
-    .formula li{margin:8px 0}
+    /* Split */
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}
+    .split .media{border-radius:18px;overflow:hidden;min-height:320px;box-shadow:0 0 40px rgba(139,92,246,.28),0 0 40px rgba(255,77,157,.25),var(--shadow)}
+    .split .media img{width:100%;height:100%;object-fit:cover}
+    .pill{display:inline-flex;gap:8px;align-items:center;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.08)}
 
     /* Contact */
-    .contact-box{background:var(--primary); color:#fff; border-radius:18px; padding:20px; display:grid; gap:8px; border:1px solid rgba(0,0,0,.12)}
-    .contact-actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:6px}
-    .contact-actions a{display:inline-block; background:var(--accent); color:#1a1500; padding:10px 14px; border-radius:12px; font-weight:800}
+    .contact{display:grid;grid-template-columns:1.2fr .8fr;gap:24px}
+    input,textarea{width:100%;padding:12px 14px;border-radius:12px;border:1.5px solid rgba(139,92,246,.35);background:rgba(255,255,255,.04);color:var(--text);box-shadow:inset 0 0 12px rgba(255,77,157,.12)}
+    [data-theme="light"] input,[data-theme="light"] textarea{background:#fff;border-color:rgba(0,0,0,.12);box-shadow:none}
+    textarea{min-height:120px}
+    iframe{width:100%;min-height:320px;border:0;border-radius:14px;box-shadow:var(--shadow)}
 
-    footer{background:#0e3a1d; color:var(--accent); padding:18px; text-align:center; font-weight:700}
+    footer{padding:36px 0;border-top:1px solid rgba(255,255,255,.1);color:var(--muted)}
+    .social{display:flex;gap:10px}
+    .social a{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.08)}
 
-    @media (max-width:820px){
-      .hero-card{grid-template-columns:1fr; padding:20px}
-      .gallery{grid-template-columns:1fr}
-    }
+    @media (max-width:1000px){.hero-inner{grid-template-columns:1fr}.split,.contact{grid-template-columns:1fr}.grid.cols-3{grid-template-columns:1fr 1fr}}
+    @media (max-width:700px){nav ul{display:none}.menu-toggle{display:inline-flex}.grid.cols-3{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
-
-  <!-- Header -->
   <header>
-    <div class="topbar container">
-      <div class="brand">HUNANIMA</div>
+    <div class="container nav">
+      <a class="brand" href="#top">
+        <span class="brand-logo"><img alt="Cleanin Lady logo" src="https://avatars.mds.yandex.net/get-ydo/6059193/2a00000185c40958a599f62fe347e1f911fb/diploma"></span>
+        <span>Cleanin Lady, LLC</span>
+      </a>
       <nav>
-        <a href="#about">À propos</a>
-        <a href="#products">Produits</a>
-        <a href="#gallery">Galerie</a>
-        <a href="#formula">Notre Formule</a>
-        <a href="#contact" class="cta-btn">Contact</a>
+        <ul>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
       </nav>
+      <div style="display:flex;gap:10px;align-items:center">
+        <button class="btn ghost" id="themeToggle">🌓</button>
+        <a class="btn" href="#contact">Get a quote</a>
+        <button class="menu-toggle btn ghost" id="menuBtn">☰</button>
+      </div>
     </div>
   </header>
 
-  <!-- HERO -->
-  <div class="hero-wrap">
-    <div class="container">
-      <div class="hero-card">
-        <div>
-          <span class="hero-badge">Machines Agricoles Simples</span>
-          <h1 class="hero-title">Travaillez malin. <span class="grad">Faites croître sûrement.</span></h1>
-          <p class="hero-sub">Équipements compacts, fiables et faciles à entretenir pour petites et moyennes exploitations — récolte, fourrage et manutention simplifiés.</p>
-          <div class="hero-actions">
-            <a class="btn" href="#products">Découvrir nos Produits</a>
-            <a class="btn secondary" href="#contact">Demander un Devis</a>
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="overlay" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <div class="card reveal">
+          <div class="eyebrow">Domain: Cleaning House</div>
+          <h1 class="title">Sparkling homes. Zero hassle.</h1>
+          <p class="subtitle">Standard, deep, and move‑out cleans by insured pros. Eco products available. Serving Victorville and nearby communities.</p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:16px">
+            <a class="btn" href="#gallery">See results →</a>
+            <a class="btn ghost" href="#services">Explore services</a>
           </div>
-          <p class="muted" style="margin-top:10px;">
-            Avenue Baratier, 95160 Montmorency • +33 7 38 50 26 36 • admin@tyusex.shop
-          </p>
+          <div class="stats">
+            <div class="stat"><h3><span class="counter" data-to="250">0</span>+</h3><p>Homes serviced</p></div>
+            <div class="stat"><h3><span class="counter" data-to="48">0</span>h</h3><p>Avg. booking lead time</p></div>
+            <div class="stat"><h3><span class="counter" data-to="4.9">0</span>★</h3><p>Client rating</p></div>
+          </div>
         </div>
-        <div class="hero-media">
-          <img src="https://i.pinimg.com/550x/a9/df/51/a9df5172829f8c05f5b92f97553d41ae.jpg" alt="Champ & tracteur">
-          <img src="http://ogden_images.s3.amazonaws.com/www.motherearthnews.com/images/2014/11/22234423/Boaz-Mini-Combine-jpg.jpg" alt="Mini moissonneuse">
-          <img src="https://krs-agro.ru/products/zagotovka_kormov/elho/19/7.jpg" alt="Outil de fourrage">
-          <img src="https://img.mod-network.net/files/images/6218ac69d37fb/SimpleFarmSilov1000_6222.jpg" alt="Équipement de silo">
+        <div class="media reveal">
+          <img alt="Cleaning action" src="https://www.prevalspraygun.com/wp-content/uploads/2018/11/gra4-2.jpg"/>
         </div>
       </div>
-    </div>
-  </div>
+    </section>
 
-  <!-- About -->
-  <section id="about" class="container">
-    <h2>À propos de nous</h2>
-    <p class="muted">
-      HUNANIMA conçoit des machines agricoles pratiques, avec des commandes simples et une maintenance facile.  
-      Notre objectif : des outils qui démarrent chaque matin et font gagner des heures aux champs.
-    </p>
-    <div class="cards" style="margin-top:12px">
-      <article class="card reveal" style="animation-delay:.00s"><strong>Fiabilité :</strong> Moins de capteurs, mécanique éprouvée, entretien simple.</article>
-      <article class="card reveal" style="animation-delay:.08s"><strong>Adaptabilité :</strong> Accessoires pour récolte, fourrage et manutention.</article>
-      <article class="card reveal" style="animation-delay:.16s"><strong>Support :</strong> Conseils pièces et entretien.</article>
-      <article class="card reveal" style="animation-delay:.24s"><strong>Valeur :</strong> Spécifications solides sans extras inutiles.</article>
-    </div>
-  </section>
-
-  <!-- Products -->
-  <section id="products" class="container">
-    <h2>Produits</h2>
-    <div class="cards">
-      <article class="card reveal" style="animation-delay:.00s">
-        <h3>Mini Moissonneuse</h3>
-        <p>Récolte compacte pour petites parcelles ; transmission simple et faible consommation.</p>
-      </article>
-      <article class="card reveal" style="animation-delay:.08s">
-        <h3>Outils de Fourrage</h3>
-        <p>Accessoires de coupe et ramassage adaptés aux tracteurs de puissance moyenne.</p>
-      </article>
-      <article class="card reveal" style="animation-delay:.16s">
-        <h3>Silos & Manutention</h3>
-        <p>Chargeurs et vis de silo avec commandes simples.</p>
-      </article>
-      <article class="card reveal" style="animation-delay:.24s">
-        <h3>Kits de Service</h3>
-        <p>Filtres, courroies et fluides regroupés pour maximiser le temps de fonctionnement.</p>
-      </article>
-    </div>
-  </section>
-
-  <!-- Gallery -->
-  <section id="gallery" class="container">
-    <h2>Galerie</h2>
-    <div class="gallery">
-      <img src="https://i.pinimg.com/550x/a9/df/51/a9df5172829f8c05f5b92f97553d41ae.jpg" alt="Tracteur au champ">
-      <img src="http://ogden_images.s3.amazonaws.com/www.motherearthnews.com/images/2014/11/22234423/Boaz-Mini-Combine-jpg.jpg" alt="Mini moissonneuse gros plan">
-      <img src="https://krs-agro.ru/products/zagotovka_kormov/elho/19/7.jpg" alt="Équipement de fourrage">
-      <img src="https://img.mod-network.net/files/images/6218ac69d37fb/SimpleFarmSilov1000_6222.jpg" alt="Chargeur de silo">
-    </div>
-  </section>
-
-  <!-- Notre Formule -->
-  <section id="formula" class="container">
-    <h2>Notre Formule (10 Points Clés)</h2>
-    <div class="formula">
-      <ol>
-        <li><strong>Design Simple :</strong> Commandes intuitives, pièces accessibles.</li>
-        <li><strong>Taille Adaptée :</strong> Puissance calibrée aux parcelles et tâches.</li>
-        <li><strong>Économie de Carburant :</strong> Moteurs et transmissions efficaces.</li>
-        <li><strong>Durabilité :</strong> Pièces d’usure renforcées ; pièces de rechange faciles.</li>
-        <li><strong>Sécurité :</strong> Protections, prise de force sécurisée, étiquettes claires.</li>
-        <li><strong>Maintenance :</strong> Kits de service et plannings inclus.</li>
-        <li><strong>Polyvalence :</strong> Un tracteur, plusieurs accessoires.</li>
-        <li><strong>Disponibilité :</strong> Devis rapides et délais réalistes.</li>
-        <li><strong>Formation :</strong> Initiation simple à la livraison.</li>
-        <li><strong>Suivi :</strong> Assistance téléphonique/email et conseils pièces.</li>
-      </ol>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="container">
-    <h2>Contact</h2>
-    <div class="contact-box">
-      <div><strong>Entreprise :</strong> HUNANIMA</div>
-      <div><strong>Domaine :</strong> Machines Agricoles Simples</div>
-      <div><strong>Adresse :</strong> Avenue Baratier, 95160 Montmorency, France</div>
-      <div><strong>Téléphone :</strong> +33 7 38 50 26 36</div>
-      <div><strong>Email :</strong> admin@tyusex.shop</div>
-      <div class="contact-actions">
-        <a href="mailto:admin@tyusex.shop?subject=Demande%20-%20HUNANIMA%20Machines%20Agricoles" target="_blank" rel="noopener">Envoyer un Email</a>
-        <a href="tel:+33738502636">Appeler</a>
-        <a href="https://wa.me/33738502636" target="_blank" rel="noopener">WhatsApp</a>
-        <a href="https://www.google.com/maps/search/?api=1&query=Avenue+Baratier+95160+Montmorency" target="_blank" rel="noopener">Ouvrir la Carte</a>
+    <!-- GALLERY -->
+    <section id="gallery" class="container">
+      <h2 class="section-title">Before & After</h2>
+      <p class="lead">Swipe to browse recent jobs—kitchens, living rooms, and hard floors.</p>
+      <div class="scroller reveal">
+        <div class="arrows"><button class="arrow" id="prev">‹</button><button class="arrow" id="next">›</button></div>
+        <div class="cards" id="cards">
+          <article class="item">
+            <div class="thumb">
+              <img alt="Home interior" src="https://le-cdn.hibuwebsites.com/2909790771894a2487ef6fd1ff0a3bd9/dms3rep/multi/opt/Home01-1920w.jpg"/>
+              <span class="badge">Whole‑home tidy</span>
+            </div>
+            <div class="body">
+              <h3>Weekly Clean</h3>
+              <div class="meta"><span>Dust • Mop • Shine</span></div>
+              <a class="btn ghost" href="#contact">Book this</a>
+            </div>
+          </article>
+          <article class="item">
+            <div class="thumb">
+              <img alt="Vacuum hard floor" src="https://www.kaerchershop-schreiber.de/images/product_images/original_images/Kaercher-T-15-1-Hartboden-saugen.jpg"/>
+              <span class="badge">Hard floors</span>
+            </div>
+            <div class="body">
+              <h3>Deep Clean</h3>
+              <div class="meta"><span>Edges • Baseboards • Grout</span></div>
+              <a class="btn ghost" href="#contact">Book this</a>
+            </div>
+          </article>
+          <article class="item">
+            <div class="thumb">
+              <img alt="Clean tools" src="https://www.prevalspraygun.com/wp-content/uploads/2018/11/gra4-2.jpg"/>
+              <span class="badge">Move‑out</span>
+            </div>
+            <div class="body">
+              <h3>Make‑Ready</h3>
+              <div class="meta"><span>Oven • Fridge • Windows</span></div>
+              <a class="btn ghost" href="#contact">Book this</a>
+            </div>
+          </article>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="container">
+      <h2 class="section-title">What we clean</h2>
+      <p class="lead">Transparent checklists and friendly pros. Supplies included.</p>
+      <div class="grid cols-3 reveal">
+        <div class="service"><h3>Standard Clean</h3><p>Dusting, vacuum & mop, kitchen & baths, beds and trash.</p></div>
+        <div class="service"><h3>Deep Clean</h3><p>Baseboards, blinds, vents, grout detail, inside cabinets.</p></div>
+        <div class="service"><h3>Move‑In/Out</h3><p>Appliances in/out, inside fridge/oven, closets & windows.</p></div>
+        <div class="service"><h3>Eco Options</h3><p>Gentle, plant‑based products on request.</p></div>
+        <div class="service"><h3>Add‑ons</h3><p>Inside windows, garage sweep, patio, laundry folding.</p></div>
+        <div class="service"><h3>Commercial</h3><p>Small offices & rentals with flexible scheduling.</p></div>
+      </div>
+    </section>
+
+    <!-- STORY SPLIT -->
+    <section class="container split">
+      <div class="media reveal"><img alt="Home interior bright" src="https://le-cdn.hibuwebsites.com/2909790771894a2487ef6fd1ff0a3bd9/dms3rep/multi/opt/Home01-1920w.jpg"></div>
+      <div class="reveal">
+        <span class="pill">Victorville • California</span>
+        <h2 class="section-title">Purple & black brand—professional shine.</h2>
+        <p class="lead">We’re punctual, detail‑obsessed, and fully equipped. Tell us your priorities and we’ll tailor a checklist for your space.</p>
+        <a class="btn" href="#contact">Get my quote →</a>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="container">
+      <h2 class="section-title">About Cleanin Lady</h2>
+      <p class="lead">Cleanin Lady, LLC provides <strong>cleaning house</strong> services across the High Desert. From quick refreshes to deep detail, your home is in careful hands.</p>
+      <details class="reveal"><summary>Are you insured?</summary><p>Yes. Proof of insurance available upon request.</p></details>
+      <details class="reveal"><summary>Do I need to be home?</summary><p>No—many clients provide access instructions. We’ll text before/after photos if you like.</p></details>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="container">
+      <h2 class="section-title">Request a quote</h2>
+      <p class="lead">Share your home size, rooms, and preferred dates. We reply within one business day.</p>
+      <div class="contact">
+        <form id="contactForm" class="reveal">
+          <input type="text" name="name" placeholder="Your name" required />
+          <input type="email" name="email" placeholder="Email" required />
+          <input type="tel" name="phone" placeholder="Phone" />
+          <textarea name="message" placeholder="Beds, baths, square feet, and any add‑ons…" required></textarea>
+          <button class="btn" type="submit">Send message</button>
+          <div class="small" style="color:var(--muted)">Or email <a href="mailto:info@denviora.shop">info@denviora.shop</a></div>
+        </form>
+        <div class="reveal">
+          <div class="service" style="height:100%">
+            <h3>Contact</h3>
+            <p><strong>Cleanin Lady, LLC</strong></p>
+            <p>GREENTREE BLVD<br/>Victorville, CA 92393<br/>United States</p>
+            <p><a href="tel:+118393633305">+1 (183) 936‑33305</a><br/>
+               <a href="mailto:info@denviora.shop">info@denviora.shop</a></p>
+            <div style="height:14px"></div>
+            <iframe title="Map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=GREENTREE%20BLVD%20VICTORVILLE%2092393%20CA%20United%20States&output=embed"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    © 2025 HUNANIMA — Tous droits réservés
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap">
+      <div>© <span id="year"></span> Cleanin Lady, LLC • Domain: Cleaning House</div>
+      <div class="social">
+        <a aria-label="Call" href="tel:+118393633305">📞</a>
+        <a aria-label="Email" href="mailto:info@denviora.shop">✉️</a>
+        <a aria-label="WhatsApp" href="https://wa.me/18393633305">🟢</a>
+      </div>
+    </div>
   </footer>
 
   <script>
-    // Apparition progressive des cartes
-    const observer = new IntersectionObserver(entries=>{
-      entries.forEach(e=>{
-        if(e.isIntersecting){ e.target.classList.add('reveal'); observer.unobserve(e.target); }
-      })
-    }, {threshold:.15});
-    document.querySelectorAll('.card').forEach(el=>observer.observe(el));
+    // Mobile menu
+    document.getElementById('menuBtn')?.addEventListener('click',()=>{
+      const ul=document.querySelector('nav ul');
+      ul.style.display=ul.style.display==='flex'?'none':'flex';
+      ul.style.flexDirection='column';
+      ul.style.gap='12px';
+      ul.style.position='absolute'; ul.style.right='24px'; ul.style.top='70px';
+      ul.style.background='var(--card)'; ul.style.padding='14px 18px';
+      ul.style.borderRadius='14px'; ul.style.boxShadow='var(--shadow)';
+    });
+
+    // Theme toggle
+    document.getElementById('themeToggle')?.addEventListener('click',()=>{
+      const html=document.documentElement; html.dataset.theme=html.dataset.theme==='light'?'dark':'light';
+    });
+
+    // Carousel arrows
+    const cards=document.getElementById('cards');
+    const by=()=>cards.clientWidth*.85; 
+    document.getElementById('prev').addEventListener('click',()=>cards.scrollBy({left:-by(),behavior:'smooth'}));
+    document.getElementById('next').addEventListener('click',()=>cards.scrollBy({left:by(),behavior:'smooth'}));
+
+    // Counters
+    const counters=document.querySelectorAll('.counter');
+    const io=new IntersectionObserver((es)=>{ es.forEach(e=>{ if(e.isIntersecting){ const el=e.target; const to=parseFloat(el.dataset.to); let cur=0; const step=()=>{cur+=(to-cur)*0.15; if(Math.abs(to-cur)<0.01){cur=to} el.textContent=to%1?cur.toFixed(1):Math.round(cur); if(cur!==to) requestAnimationFrame(step)}; step(); io.unobserve(el);} }) },{threshold:.6});
+    counters.forEach(c=>io.observe(c));
+
+    // Reveal-on-scroll
+    const revIO=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible'); revIO.unobserve(e.target)}})},{threshold:.25});
+    document.querySelectorAll('.reveal').forEach(el=>revIO.observe(el));
+
+    // Mailto form
+    document.getElementById('contactForm').addEventListener('submit', (ev)=>{
+      ev.preventDefault(); const fd=new FormData(ev.target);
+      const body=encodeURIComponent(`Name: ${fd.get('name')}\nEmail: ${fd.get('email')}\nPhone: ${fd.get('phone')}\n\nMessage:\n${fd.get('message')}`);
+      window.location.href=`mailto:info@denviora.shop?subject=New%20Cleaning%20Inquiry&body=${body}`;
+    });
+
+    // Year
+    document.getElementById('year').textContent=new Date().getFullYear();
   </script>
 </body>
 </html>
